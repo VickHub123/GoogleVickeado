@@ -16,7 +16,7 @@
       padding: 0;
     }
     :root, body.is-fullscreen {
-      background-color: #000000;
+      background-color: #f5f5f5;
     }
     [hidden] {
       display: none !important;
@@ -46,7 +46,7 @@
       cursor: default;
       user-select: none;
       -webkit-user-select: none;
-      background-color: #000000;
+      background-color: #f5f5f5;
     }
     #launch {
       background-color: rgba(0, 0, 0, 0.7);
@@ -111,10 +111,10 @@
       border-radius: 4px;
     }
     .control-button-highlight:hover {
-      background: #ff4c4c26;
+      background: #00000026;
     }
     .control-button-highlight.active {
-      background: #ff4c4c59;
+      background: #00000059;
     }
     .fullscreen-button {
       background: white;
@@ -142,7 +142,7 @@
     }
     
   </style>
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#f5f5f5">
   
 </head>
 <body>
@@ -201,7 +201,7 @@
       setProgress(0.1);
 
       const scaffolding = new Scaffolding.Scaffolding();
-      scaffolding.width = 480;
+      scaffolding.width = 640;
       scaffolding.height = 360;
       scaffolding.resizeMode = "preserve-ratio";
       scaffolding.editableLists = false;
@@ -221,7 +221,7 @@
       };
 
       scaffolding.setUsername("player####".replace(/#/g, () => Math.floor(Math.random() * 10)));
-      scaffolding.setAccentColor("#ff4c4c");
+      scaffolding.setAccentColor("#000000");
 
       try {
         scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "p4-@Google.sb3"));
@@ -310,7 +310,7 @@
       await scaffolding.loadProject(projectData);
       setProgress(1);
       loadingScreen.hidden = true;
-      if (false) {
+      if (true) {
         scaffolding.start();
       } else {
         launchScreen.hidden = false;
